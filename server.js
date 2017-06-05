@@ -14,7 +14,9 @@ app.use(logger('dev'));
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
-// LATER FOR OAUTH
+
+app.use('/api/users', require('./routes/api/users'));
+// LATER FOR AUTH?
 // app.use(require('./config/auth'));
 // NOT NECESSARY?
 // app.use(bodyParser.urlencoded({extended: false}));
