@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 require('dotenv').config();
@@ -14,12 +15,9 @@ app.use(logger('dev'));
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
+app.use(require('./config/auth'));
 
 app.use('/api/users', require('./routes/api/users'));
-// LATER FOR AUTH?
-// app.use(require('./config/auth'));
-// NOT NECESSARY?
-// app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));

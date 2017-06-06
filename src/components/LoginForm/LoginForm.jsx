@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import userService from '../../utils/userService';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -12,6 +13,19 @@ class LoginForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    let self = this;
+    userService.login(self.state)
+      .then(() => {
+        self.props.handleLogin();
+        self.props.history.push('/');
+      })
+      .catch(err => alert('Invalid Credentials!'));
+  }
+
+  handleChange = (field, e) => {
+    this.setState({
+      [field]: e.target.value
+    });
   }
 
   render() {

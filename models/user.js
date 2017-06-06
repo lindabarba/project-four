@@ -18,8 +18,21 @@ userSchema.set('toJSON', {
   }
 });
 
-// userSchema.pre('save', function(next) {
-//   var user = this;
-// });
+userSchema.methods.comparePassword = function(tryPassword, cb) {
+  bcrypt.compare(tryPassword, this.password, function(err, isMatch) {
+    if (err) return cb(err);
+    cb(null, isMatch);
+  });
+};
+
+userSchema.pre('save', function(next) {
+  var user = this;
+  if (!user.isModified('password')) return next();
+  bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash) {
+    if (err) return next(err);
+    user.password = hash;
+    next();
+  });
+});
 
 module.exports = mongoose.model('User', userSchema);

@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL);
 
-mongoose.Promise = Promise;
-// NOT SURE IF WE NEED THIS LINE YET/EVER?
-// mongoose.Promise = gloabl.Promise;
+// mongoose.Promise = Promise;
+mongoose.Promise = global.Promise;
 
 const db = mongoose.connection;
 

@@ -13,6 +13,20 @@ function signup(user) {
   .then(data => data);
 }
 
+function login(credentials) {
+  return fetch(BASE_URL + 'login', {
+    method: 'POST',
+    headers: new Headers({'Content-Type': 'application/json'}),
+    body: JSON.stringify(credentials)
+  })
+  .then(res => {
+    if (res.ok) return res.json();
+    throw new Error('Bad credentials');
+  })
+  .then(token => token);
+}
+
 export default {
-  signup
+  signup,
+  login
 };
