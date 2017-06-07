@@ -1,0 +1,23 @@
+.NavBar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: right;
+  margin: 0 0 20px;
+}
+
+.NavBar-link {
+  margin: 0 10px;
+}
+
+.NavBar-welcome {
+  color: grey;
+}

@@ -43,28 +43,30 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path='/' render={() =>
-            <HomePage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-            />
-          }/>
-          <Route exact path='/signup' render={(props) =>
-            <SignupPage
-              {...props}
-              handleSignUp={this.handleSignUp}
-            />
-          }/>
-          <Route exact path='/login' render={(props) =>
-            <LoginPage
-              {...props}
-              handleLogin={this.handleLogin}
-            />
-          }/>
+      <div className='container'>
+        <Router>
+          <Switch>
+            <Route exact path='/' render={() =>
+              <HomePage
+                user={this.state.user}
+                handleLogout={this.handleLogout}
+              />
+            }/>
+            <Route exact path='/signup' render={(props) =>
+              <SignupPage
+                {...props}
+                handleSignUp={this.handleSignUp}
+              />
+            }/>
+            <Route exact path='/login' render={(props) =>
+              <LoginPage
+                {...props}
+                handleLogin={this.handleLogin}
+              />
+            }/>
           </Switch>
         </Router>
+      </div>
     );
   }
 }

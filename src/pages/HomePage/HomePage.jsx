@@ -11,7 +11,6 @@ const HomePage = (props) => {
         user={props.user}
         handleLogout={props.handleLogout}
       />
-      <footer className='header-footer'>This is the footer</footer>
     </div>
   );
 }
