@@ -1,16 +1,13 @@
 var mongoose = require('mongoose');
+var Drink = require('Drink', drinkSchema);
 
 var drinkMenu = new mongoose.Schema({
-  name: String,
-  type: String,
-  cost: Number,
-  drinkID: Number
+  drinks: [{type: mongoose.Schema.Types.ObjectId, ref: 'Drink'}]
 });
 
 var barSchema = new mongoose.Schema({
   name: String,
   address: String,
-  barID: Number,
   drinkMenu: [drinkMenuSchema]
 });
 
