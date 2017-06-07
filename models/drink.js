@@ -1,14 +1,36 @@
 var mongoose = require('mongoose');
-var Bar = require('Bar', barSchema);
-var User = require('User', userSchema);
-var Message = require('Message', messageSchema);
+var Schema = mongoose.Schema;
 
-var drinkSchema = new mongoose.Schema({
-  name: String,
+var drinkSchema = new Schema({
+  name: String
   cost: Number,
-  bar: [{type: mongoose.Schema.Types.ObjectId, ref: 'Bar'}],
-  patronTo: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
-  message: [{type: mongoose.Schema.Types.ObjectId, ref: 'Message'}]
+  redeemed: {type: Boolean, default: false},
+  bar: {type: Schema.Types.ObjectId, ref: 'Bar'},
+  patronTo: {type: Schema.Types.ObjectId, ref: 'User'},
+  message: {type: String, default: 'Cheers!'}
 });
+
+// need to duplicate for REDEEM
+drinkSchema.post('remove', function(doc) {
+  this.model('Bar').find(
+    {drinks: doc._id},
+    function(err, bars) {
+      bars.forEach(function(bar) {
+        bar.drink.remove(doc._id);
+        bar.save();
+      });
+    }
+  );
+});
+
+/*---- Helper Functions ----*/
+function create(req, res) {
+  var drink = new Drink(req.body);
+  drink.save(err => {
+    res.redirect(`drinks/${drink.id}`);
+  });
+}
+
+
 
 module.exports = mongoose.model('Drink', drinkSchema);
