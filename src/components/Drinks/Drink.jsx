@@ -1,14 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Drink.css';
 
-class Drink extends Component {
-  render() {
-    return (
-      <ul className="list-group">
-
-      </ul>
-    )
-  }
-}
+// const Drink = (props) => {
+//   return (
+//     <div className="Drink">
+//     {props.drink.map(drink =>
+//       <div className=
+//       )}
+//       }
+//     </div>
+//   )
+// }
 
 export default Drink;

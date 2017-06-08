@@ -2,12 +2,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var drinkSchema = new Schema({
-  name: String
+  name: String,
   cost: Number,
   redeemed: {type: Boolean, default: false},
   bar: {type: Schema.Types.ObjectId, ref: 'Bar'},
   patronTo: {type: Schema.Types.ObjectId, ref: 'User'},
-  message: {type: String, default: 'Cheers!'}
+  message: {type: String, default: 'Cheers!'},
+  from: String
 });
 
 // need to duplicate for REDEEM

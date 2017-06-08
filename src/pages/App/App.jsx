@@ -9,6 +9,8 @@ import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
+import NavBar from '../../components/NavBar/NavBar';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
