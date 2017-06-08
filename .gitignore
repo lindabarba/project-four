@@ -5,10 +5,9 @@
 
 # testing
 /coverage
-/seed.json
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
