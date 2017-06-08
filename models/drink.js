@@ -6,7 +6,8 @@ var drinkSchema = new Schema({
   cost: Number,
   redeemed: {type: Boolean, default: false},
   bar: {type: Schema.Types.ObjectId, ref: 'Bar'},
-  patronTo: {type: Schema.Types.ObjectId, ref: 'User'},
+  // patronTo: {type: Schema.Types.ObjectId, ref: 'User'},
+  patronTo: String,
   message: {type: String, default: 'Cheers!'},
   from: String
 });

@@ -26,7 +26,14 @@ function login(user) {
   .then(({token}) => token);
 }
 
+// function getUsers() {
+//   return fetch(BASE_URL)
+//   .then(response => response.json())
+//   .then(users => users);
+// }
+
 export default {
   signup,
   login
+  // getUsers
 };
