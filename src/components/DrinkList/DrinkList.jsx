@@ -6,21 +6,21 @@ const DrinkList = (props) => {
 
   return (
     <table className='table'>
-      <thead>
+      <thead className='thead'>
         <tr>
-          <th className='text-center'>Drink For</th>
-          <th className='text-center'>Drink</th>
-          <th className='text-center'>From</th>
-          <th className='text-center'>Message</th>
+          <th className='th'>To</th>
+          <th className='th'>Drink</th>
+          <th className='th'>From</th>
+          <th className='th'>Message</th>
         </tr>
       </thead>
       <tbody>
         {props.drinks.map(drink =>
           <tr key={drink.name}>
-            <td>{drink.patronTo}</td>
-            <td>{drink.name}</td>
-            <td>{drink.from}</td>
-            <td>{drink.message}</td>
+            <td className='td'>{drink.patronTo}</td>
+            <td className='td'>{drink.name}</td>
+            <td className='td'>{drink.from}</td>
+            <td className='td'>{drink.message}</td>
           </tr>
         )}
       </tbody>
