@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import userService from '../../utils/userService';
+import Header from '../Header/Header';
+import './SignupForm.css';
+
+
 
 class SignupForm extends Component {
   constructor(props) {
@@ -38,6 +42,7 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h2>Sign Up</h2>
         <form className="col s12" onSubmit={this.handleSubmit} >
           <div className="row">
@@ -62,7 +67,7 @@ class SignupForm extends Component {
           </div>
           <div className="row">
             <div className="input-field col s9 text-center">
-              <button className="btn btn-default blue-grey darken-1" type="submit" name="action">Submit<i className="material-icons right"></i> disabled={this.isFormInvalid()}></button>&nbsp;&nbsp;
+              <button className="btn btn-default blue-grey darken-1" type="submit" name="action" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
             </div>
           </div>

@@ -2,21 +2,22 @@
   width: 100%;
   background: url('http://i.imgur.com/3zJGj3c.jpg') no-repeat;
   font-family: 'Rock Salt', cursive;
-  /*font-size: 2em;*/
+  font-size: 1em;
   color: white;
   text-align: center;
   table-layout: fixed;
   border-collapse: collapse;
+  margin: 5em 0;
 }
 
 .thead {
   border: none;
   font-family: 'Cabin Sketch', cursive;
-  /*font-size: 2em;*/
+  font-size: 1em;
   color: white;
 }
 
 .th, .td {
-  padding: 20px;
+  padding: 1.5em;
   width: 25%;
 }

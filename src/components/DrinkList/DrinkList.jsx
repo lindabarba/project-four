@@ -8,15 +8,15 @@ const DrinkList = (props) => {
     <table className='table'>
       <thead className='thead'>
         <tr>
-          <th className='th'>To</th>
-          <th className='th'>Drink</th>
-          <th className='th'>From</th>
-          <th className='th'>Message</th>
+          <th className='th'>TO</th>
+          <th className='th'>DRINK</th>
+          <th className='th'>FROM</th>
+          <th className='th'>MESSAGE</th>
         </tr>
       </thead>
       <tbody>
         {props.drinks.map(drink =>
-          <tr key={drink.name}>
+          <tr key={drink.id}>
             <td className='td'>{drink.patronTo}</td>
             <td className='td'>{drink.name}</td>
             <td className='td'>{drink.from}</td>

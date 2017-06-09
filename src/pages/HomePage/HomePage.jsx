@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import drinksAPI from '../../utils/drinksAPI';
 import NavBar from '../../components/NavBar/NavBar';
-import Board from '../../components/Board/Board';
 import DrinkList from '../../components/DrinkList/DrinkList';
 import './HomePage.css';
 
