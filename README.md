@@ -10,6 +10,7 @@ Are you out on the town but your bestie isn't? Want to butter up your boss at th
 <br>
 The app is hosted by Heroku [here](https://cheers-to-you.herokuapp.com/).  
 <br>
+See the stories on [Trello](https://trello.com/b/9BDSLXqc/wdi-dt-44-project-4-cheers-to-you).
 ##### Techonology Implemented  
 * MongoDB
 * Mongoose
